@@ -13,13 +13,12 @@ public class Canal {
     }
 
     /* Métodos */
-    /* Getters y Setters */
-
     @Override
     public String toString() {
         return "Canal [Código: " + codigo + " | Nombre: " + nombre + " | Suscriptores: " + suscriptores + "]";
     }
 
+    /* Getters y Setters */
     public int getCodigo() {
         return codigo;
     }
