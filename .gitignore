@@ -33,6 +33,5 @@ bin/
 target/
 *.class
 
-# Archivos de entorno de IntelliJ
 .idea/
 *.iml
