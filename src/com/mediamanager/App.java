@@ -1,4 +1,4 @@
-package com.mediamanger;
+package com.mediamanager;
 
 public class App {
 }
