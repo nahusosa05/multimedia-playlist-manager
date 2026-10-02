@@ -20,6 +20,11 @@ public class Video extends ElementoMultimedia{
         return "Calidad: " + calidad;
     }
 
+    @Override
+    public String reproducir() {
+        return "Reproduciendo video [" + getTitulo() + "] a resolución [" + calidad + "]";
+    }
+
     /* Getters y Setters */
     public String getCalidad() {
         return calidad;

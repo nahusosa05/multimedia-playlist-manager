@@ -20,6 +20,11 @@ public class Podcast extends ElementoMultimedia {
         return "Número de episodio: " + numeroEpisodio;
     }
 
+    @Override
+    public String reproducir() {
+        return "Reproduciendo podcast: " + getTitulo() + " [Episodio #" + numeroEpisodio + "]";
+    }
+
     /* Getters y Setters */
     public int getNumeroEpisodio() {
         return numeroEpisodio;

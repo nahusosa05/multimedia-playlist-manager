@@ -20,6 +20,11 @@ public class Cancion extends ElementoMultimedia{
         return "Album: " + album;
     }
 
+    @Override
+    public String reproducir() {
+        return "Reproduciendo [" + getTitulo() + "] | " + getDetalleEspecifico();
+    }
+
     /* Getters y Setters */
     public String getAlbum() {
         return album;
