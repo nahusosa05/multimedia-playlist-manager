@@ -201,12 +201,10 @@ public class MenuContenidos extends Menu {
         }
 
         System.out.println("\n===========[LISTA DE REPRODUCCIÓN]===========");
-        int indice = 1;
         for (ElementoMultimedia em : contenidos) {
             String nombreCanal = (em.getCanal() != null) ? em.getCanal().getNombre() : "Sin canal";
             String tiempoFormateado = formatearDuracion(em.getDuracionMinutos());
-            System.out.println(indice + ". " + em.getTitulo() + " | " + nombreCanal + " | " + tiempoFormateado);
-            indice++;
+            System.out.println("#" + em.getCodigo() + " - " + em.getTitulo() + " | " + nombreCanal + " | " + tiempoFormateado);
         }
         System.out.println("===============================================");
 
