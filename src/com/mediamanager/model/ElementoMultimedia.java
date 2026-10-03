@@ -1,8 +1,9 @@
 package com.mediamanager.model;
 
+import com.mediamanager.interfaces.Identificable;
 import com.mediamanager.interfaces.Reproducible;
 
-public abstract class ElementoMultimedia implements Reproducible {
+public abstract class ElementoMultimedia implements Reproducible, Identificable {
     private int codigo;
     private String titulo;
     private double duracionMinutos;

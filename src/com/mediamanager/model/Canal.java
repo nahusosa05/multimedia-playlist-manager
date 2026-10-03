@@ -1,6 +1,8 @@
 package com.mediamanager.model;
 
-public class Canal {
+import com.mediamanager.interfaces.Identificable;
+
+public class Canal implements Identificable {
     private int codigo;
     private String nombre;
     private int suscriptores;
