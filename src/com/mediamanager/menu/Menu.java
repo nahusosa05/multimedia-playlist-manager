@@ -1,5 +1,7 @@
 package com.mediamanager.menu;
 
+import com.mediamanager.utils.Validaciones;
+
 import java.util.Scanner;
 
 public abstract class Menu {
@@ -28,7 +30,7 @@ public abstract class Menu {
     public int leerEnteroNoNegativo(String mensaje) {
         while (true) {
             int valor = leerEntero(mensaje);
-            if (valor >= 0) {
+            if (Validaciones.validarNoNegativo(valor)) {
                 return valor;
             }
             System.out.println("Error: El número no puede ser negativo.");
@@ -39,7 +41,7 @@ public abstract class Menu {
         while (true) {
             System.out.println(mensaje);
             String texto = sc.nextLine().trim();
-            if (!texto.isEmpty()) {
+            if (Validaciones.esTextoValido(texto)) {
                 return texto;
             }
             System.out.println("Error: El texto no puede estar vacío.");
@@ -51,7 +53,7 @@ public abstract class Menu {
             try {
                 System.out.print(mensaje);
                 double valor = Double.parseDouble(sc.nextLine().trim());
-                if (valor >= 0) {
+                if (Validaciones.validarNoNegativo(valor)) {
                     return valor;
                 }
                 System.out.println("Error: El valor no puede ser negativo.");
