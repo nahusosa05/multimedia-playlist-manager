@@ -37,12 +37,16 @@ public class MenuPrincipal extends Menu {
             switch (opcion) {
                 case 1:
                     menuCanales.ejecutar();
+                    break;
                 case 2:
                     menuContenidos.ejecutar();
+                    break;
                 case 0:
                     System.out.println("Cerrando reproductor...");
+                    break;
                 default:
                     System.out.println("Opción no válida. Intente nuevamente.");
+                    break;
             }
             System.out.println();
         } while (opcion != 0);
