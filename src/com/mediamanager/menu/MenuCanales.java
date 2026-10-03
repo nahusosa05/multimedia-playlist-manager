@@ -34,7 +34,6 @@ public class MenuCanales extends Menu {
 
     // Métodos auxiliares de ejecutar()
     private void ingresarCanal() {
-        System.out.println("\n**********************************************");
         int codigo = Secuencias.generarCodigoCanal();
         System.out.println("**********************************************");
         String nombre = leerTextoNoVacio("Ingrese nombre del canal: ");

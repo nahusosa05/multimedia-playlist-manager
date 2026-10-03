@@ -50,15 +50,8 @@ public class MenuContenidos extends Menu {
     }
 
     private void ingresarCancion() {
-        System.out.println("\n**********************************************");
         int codigo = Secuencias.generarCodigoElementoMultimedia();
 
-        if (repoContenidos.buscarPorCodigo(codigo) != null) {
-            System.out.println("\n====================================");
-            System.out.println("Error: Ya existe un elemento multimedia con ese código.");
-            System.out.println("====================================");
-            return;
-        }
         System.out.println("**********************************************");
         String titulo = leerTextoNoVacio("Ingrese título de la canción: ");
         System.out.println("**********************************************");
@@ -82,15 +75,8 @@ public class MenuContenidos extends Menu {
         }
     }
     private void ingresarVideo() {
-        System.out.println("\n**********************************************");
         int codigo = Secuencias.generarCodigoElementoMultimedia();
 
-        if (repoContenidos.buscarPorCodigo(codigo) != null) {
-            System.out.println("\n====================================");
-            System.out.println("Error: Ya existe un elemento multimedia con ese código.");
-            System.out.println("====================================");
-            return;
-        }
         System.out.println("**********************************************");
         String titulo = leerTextoNoVacio("Ingrese título del video: ");
         System.out.println("**********************************************");
@@ -114,15 +100,8 @@ public class MenuContenidos extends Menu {
         }
     }
     private void ingresarPodcast() {
-        System.out.println("\n**********************************************");
         int codigo = Secuencias.generarCodigoElementoMultimedia();
 
-        if (repoContenidos.buscarPorCodigo(codigo) != null) {
-            System.out.println("\n====================================");
-            System.out.println("Error: Ya existe un elemento multimedia con ese código.");
-            System.out.println("====================================");
-            return;
-        }
         System.out.println("**********************************************");
         String titulo = leerTextoNoVacio("Ingrese título del podcast: ");
         System.out.println("**********************************************");
