@@ -33,7 +33,18 @@ public class MenuContenidos extends Menu {
     }
 
     // Métodos auxiliares de ejecutar()
+    private void mostrarCanalesConCodigo() {
+        System.out.println("\n===========[Lista de Canales]===========");
+        System.out.println("#CODIGO | NOMBRE");
+        System.out.println("**********************************************");
+        for (Canal c : repoCanales.listar()) {
+            System.out.println("#" + c.getCodigo() + " | " + c.getNombre());
+        }
+        System.out.println("===============================================");
+    }
+
     private Canal seleccionarCanal() {
+        mostrarCanalesConCodigo();
         System.out.println("\n**********************************************");
         int codigoCanal = leerEnteroNoNegativo("Ingrese el código del canal creador: ");
         System.out.println("**********************************************");
