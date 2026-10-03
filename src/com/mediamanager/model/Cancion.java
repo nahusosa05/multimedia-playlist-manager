@@ -22,7 +22,7 @@ public class Cancion extends ElementoMultimedia{
 
     @Override
     public String reproducir() {
-        return "Reproduciendo [" + getTitulo() + "] | " + getDetalleEspecifico();
+        return "Reproduciendo [" + getTitulo() + "] de " + getCanal().getNombre() + " | " + getDetalleEspecifico();
     }
 
     /* Getters y Setters */
