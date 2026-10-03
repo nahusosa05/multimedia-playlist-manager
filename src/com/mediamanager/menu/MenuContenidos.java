@@ -2,6 +2,7 @@ package com.mediamanager.menu;
 
 import com.mediamanager.model.*;
 import com.mediamanager.repository.Repositorio;
+import com.mediamanager.utils.Secuencias;
 
 import java.util.List;
 import java.util.Scanner;
@@ -50,7 +51,7 @@ public class MenuContenidos extends Menu {
 
     private void ingresarCancion() {
         System.out.println("\n**********************************************");
-        int codigo = leerEnteroNoNegativo("Ingrese el código de la canción: ");
+        int codigo = Secuencias.generarCodigoElementoMultimedia();
 
         if (repoContenidos.buscarPorCodigo(codigo) != null) {
             System.out.println("\n====================================");
@@ -82,7 +83,7 @@ public class MenuContenidos extends Menu {
     }
     private void ingresarVideo() {
         System.out.println("\n**********************************************");
-        int codigo = leerEnteroNoNegativo("Ingrese el código del video: ");
+        int codigo = Secuencias.generarCodigoElementoMultimedia();
 
         if (repoContenidos.buscarPorCodigo(codigo) != null) {
             System.out.println("\n====================================");
@@ -114,7 +115,7 @@ public class MenuContenidos extends Menu {
     }
     private void ingresarPodcast() {
         System.out.println("\n**********************************************");
-        int codigo = leerEnteroNoNegativo("Ingrese el código del podcast: ");
+        int codigo = Secuencias.generarCodigoElementoMultimedia();
 
         if (repoContenidos.buscarPorCodigo(codigo) != null) {
             System.out.println("\n====================================");
@@ -211,8 +212,9 @@ public class MenuContenidos extends Menu {
     }
 
     private void consultarElemento() {
+        mostrarElementosConCodigo();
         System.out.println("\n**********************************************");
-        int codigo = leerEnteroNoNegativo("Ingrese el código del elemento: ");
+        int codigo = leerEnteroNoNegativo("Ingrese el código del elemento que desea el detalle: ");
         System.out.println("**********************************************");
         ElementoMultimedia em = repoContenidos.buscarPorCodigo(codigo);
 
@@ -227,7 +229,18 @@ public class MenuContenidos extends Menu {
         }
     }
 
+    private void mostrarElementosConCodigo() {
+        System.out.println("\n===========[Lista de Elementos]===========");
+        System.out.println("#CODIGO | TÍTULO");
+        System.out.println("**********************************************");
+        for (ElementoMultimedia em : repoContenidos.listar()) {
+            System.out.println("#" + em.getCodigo() + " | " + em.getTitulo());
+        }
+        System.out.println("===============================================");
+    }
+
     private void modificarElemento() {
+        mostrarElementosConCodigo();
         System.out.println("\n**********************************************");
         int codigo = leerEnteroNoNegativo("Ingrese el código del elemento a modificar: ");
         ElementoMultimedia em = repoContenidos.buscarPorCodigo(codigo);
@@ -256,6 +269,7 @@ public class MenuContenidos extends Menu {
     }
 
     private void eliminarElemento() {
+        mostrarElementosConCodigo();
         System.out.println("\n**********************************************");
         int codigo = leerEnteroNoNegativo("Ingrese el código del elemento a eliminar: ");
         System.out.println("**********************************************");
@@ -276,6 +290,7 @@ public class MenuContenidos extends Menu {
     }
 
     private void reproducirElemento() {
+        mostrarElementosConCodigo();
         System.out.println("\n**********************************************");
         int codigo = leerEnteroNoNegativo("Ingrese el código del elemento a reproducir: ");
         System.out.println("**********************************************");
