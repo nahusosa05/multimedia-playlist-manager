@@ -3,6 +3,7 @@ package com.mediamanager.menu;
 import com.mediamanager.model.Canal;
 import com.mediamanager.model.ElementoMultimedia;
 import com.mediamanager.repository.Repositorio;
+import com.mediamanager.utils.Secuencias;
 
 import java.util.List;
 import java.util.Scanner;
@@ -34,7 +35,7 @@ public class MenuCanales extends Menu {
     // Métodos auxiliares de ejecutar()
     private void ingresarCanal() {
         System.out.println("\n**********************************************");
-        int codigo = leerEnteroNoNegativo("Ingrese el código del canal: ");
+        int codigo = Secuencias.generarCodigoCanal();
         System.out.println("**********************************************");
         String nombre = leerTextoNoVacio("Ingrese nombre del canal: ");
         System.out.println("**********************************************");
@@ -71,9 +72,20 @@ public class MenuCanales extends Menu {
         System.out.println("====================================");
     }
 
+    private void mostrarCanalesConCodigo() {
+        System.out.println("\n===========[Lista de Canales]===========");
+        System.out.println("#CODIGO | NOMBRE");
+        System.out.println("**********************************************");
+        for (Canal c : repoCanales.listar()) {
+            System.out.println("#" + c.getCodigo() + " | " + c.getNombre());
+        }
+        System.out.println("===============================================");
+    }
+
     private void consultarCanal() {
+        mostrarCanalesConCodigo();
         System.out.println("\n**********************************************");
-        int codigo = leerEnteroNoNegativo("Ingrese el código del canal: ");
+        int codigo = leerEnteroNoNegativo("Ingrese el código del canal que se desea el detalle: ");
         System.out.println("**********************************************");
         Canal c = repoCanales.buscarPorCodigo(codigo);
 
@@ -89,6 +101,7 @@ public class MenuCanales extends Menu {
     }
 
     private void modificarCanal() {
+        mostrarCanalesConCodigo();
         System.out.println("\n**********************************************");
         int codigo = leerEnteroNoNegativo("Ingrese el código del canal a modificar: ");
         System.out.println("**********************************************");
@@ -115,6 +128,7 @@ public class MenuCanales extends Menu {
     }
 
     private void eliminarCanal() {
+        mostrarCanalesConCodigo();
         System.out.println("\n**********************************************");
         int codigo = leerEnteroNoNegativo("Ingrese el código del canal a eliminar: ");
         System.out.println("**********************************************");
